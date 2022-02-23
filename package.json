@@ -1,0 +1,16 @@
+{
+  "name": "cors-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.19",
+    "anywhere": "^1.5.0",
+    "vue": "^3.2.31"
+  }
+}
