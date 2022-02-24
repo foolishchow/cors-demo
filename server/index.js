@@ -20,9 +20,9 @@ server.filter((req, res, url) => {
 
 server.get('/simple-request', function (req, res, url) {
   this.log(req);
-  res.writeHead(200, {
-    'Access-Control-Allow-Origin': '*', // 设置允许所有端口访问
-  });
+  // res.writeHead(200, {
+  //   'Access-Control-Allow-Origin': '*', // 设置允许所有端口访问
+  // });
   res.write(JSON.stringify(successResponse));
   res.end();
   console.info('request ended');
@@ -69,6 +69,7 @@ server.options('/simple-request-custom-content-type', function (req, res, url) {
     // 设置允许所有端口访问
     'Access-Control-Allow-Origin': req.headers.origin,
     'Access-Control-Allow-Headers': 'content-type',
+    'Access-Control-Allow-Methods': 'PUT',
   });
   res.end();
   console.info('request ended');
