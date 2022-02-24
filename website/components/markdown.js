@@ -110,7 +110,17 @@ const Red = (...content) => {
 const Bold = (...content) => {
   return h('span', { style: 'font-weight:bold' }, content);
 };
+
+/**
+ *
+ * @param {import('../vue/vue.esm-browser.js').VNode[]} content
+ * @returns
+ */
+const Article = (...content) => {
+  return h('article', { class: 'markdown-body' }, content);
+};
 export {
+  Article,
   Tag,
   Pre,
   PreRed,

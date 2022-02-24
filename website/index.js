@@ -2,19 +2,15 @@
 import { createApp, defineComponent, h } from './vue/vue.esm-browser.js';
 import { simpleRequest } from './simple.js';
 import { simpleRequestPreflight } from './simpe-preflight.js';
+import { Article } from './components/markdown.js';
 
 const App = defineComponent({
   name: 'app',
-  data() {
-    return {
-      appName: 'aaaa',
-    };
-  },
   /**
    * @this {App}
    */
   render() {
-    return h('div', [simpleRequest(), simpleRequestPreflight()]);
+    return Article(simpleRequest(), simpleRequestPreflight());
   },
 });
 

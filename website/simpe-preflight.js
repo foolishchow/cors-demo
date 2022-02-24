@@ -1,17 +1,13 @@
 import { table } from './components/table.js';
 import { requestBlock, simpleBlock } from './components/request.js';
 import {
-  Bold,
   Line,
-  Pre,
   P,
-  Red,
   Tag,
-  TagPink,
   TagBlue,
   TagOrange,
   TagGreen,
-} from './components/tag.js';
+} from './components/markdown.js';
 import { h } from './vue/vue.esm-browser.js';
 
 const SimpleRequestWithStandardContentType = () => {
@@ -21,7 +17,7 @@ const SimpleRequestWithStandardContentType = () => {
       path: '/simple-request-standard-content-type',
       showPreflight: false,
       headers: {
-        'content-type': 'multipart/form-data',
+        'Content-Type': 'multipart/form-data',
       },
     },
     Line(),
@@ -49,7 +45,7 @@ const SimpleRequestWithUnStandardContentType = () => {
       path: '/simple-request-standard-content-type',
       showPreflight: false,
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
     },
     Line(),
@@ -102,7 +98,7 @@ const SimpleRequestWithCustomContentType = () => {
       title: '简单请求METHOD - 非标准的contentType',
       path: '/simple-request-custom-content-type',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
     },
     Line(),

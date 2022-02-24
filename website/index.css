@@ -14,7 +14,7 @@ body {
     color:#333;
 }
 
-h4{
+/* h4{
   margin: 0;
 }
 p {
@@ -26,7 +26,7 @@ p {
 
 pre{
   margin: 0;
-}
+} */
 .simple-block{
   border: 1px solid powderblue;
   padding: 10px;
@@ -42,10 +42,8 @@ pre{
   line-height: 20px;
 }
 
-.request-wrapper .title-line{
-  display: flex;
-}
-.request-wrapper .title-line .btn-send{
+
+.request-wrapper .btn-send{
   color: #fff;
   background-color: #1890ff;
   border-color: #1890ff;
@@ -54,29 +52,26 @@ pre{
   margin-left: 2px;
   cursor: pointer;
 }
-.request-wrapper .title-line .btn-send:jover{
+.request-wrapper .btn-send:hover{
   color: #fff;
   background-color: #40a9ff;
   border-color: #40a9ff;
 }
-.request-wrapper .title-line .btn-send:active{
+.request-wrapper  .btn-send:active{
   color: #fff;
   background-color: #096dd9;
   border-color: #096dd9;
 }
-.request-wrapper .title-line .title{
-  flex:1
-}
 
 
 .request-wrapper .title{
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 .request-wrapper .path{
   color: #999;
-  line-height: 26px;
   padding-bottom: 5px;
+  display: flex;
 }
 
 .request-wrapper .path .method{
@@ -89,7 +84,10 @@ pre{
   display: inline-block;
   text-align: center;
 }
-table.headers{
+.request-wrapper .path .path-name{
+  flex:1
+}
+/* table.headers{
   color: #999;
   border:1px solid #eee;
   border-collapse: collapse;
@@ -103,7 +101,7 @@ table.headers td{
 }
 table.headers tr td:first-child{
   font-weight: bold;
-}
+} */
 
 
 .request-wrapper pre.error{

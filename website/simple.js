@@ -10,7 +10,7 @@ import {
   Tag,
   TagBlue,
   TagOrange,
-} from './components/tag.js';
+} from './components/markdown.js';
 
 const SimpleRequestFailed = function () {
   return requestBlock(

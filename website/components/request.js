@@ -1,7 +1,7 @@
 import { sendRequest } from '../common/index.js';
 import { defineComponent, h } from '../vue/vue.esm-browser.js';
 import { TableBlock } from './table.js';
-import { TagBlue } from './tag.js';
+import { TagBlue } from './markdown.js';
 
 const RequestBlock = defineComponent({
   name: 'RequestBlock',
@@ -53,31 +53,37 @@ const RequestBlock = defineComponent({
     if (this.result) {
       result = h('pre', { class: 'result' }, this.result);
     }
-    let Preflight = this.showPreflight
-      ? h(
+
+    /** @type {import('../vue/vue.esm-browser').VNode[]} */
+    let buttons = [
+      h('button', { class: 'btn-send', onClick: this.request }, '请求'),
+    ];
+    if (this.showPreflight) {
+      buttons.push(
+        h(
           'button',
           { class: 'btn-send preflight', onClick: this.Preflight },
           'Preflight'
         )
-      : undefined;
+      );
+    }
+    buttons.push(
+      h('button', { class: 'btn-send clear', onClick: this.clear }, '清除')
+    );
+
     return h(
       'div',
       {
         class: 'request-wrapper',
       },
       [
-        h('div', { class: 'title-line' }, [
-          h('h5', { class: 'title' }, this.title),
-          h('button', { class: 'btn-send', onClick: this.request }, '请求'),
-          Preflight,
-          h('button', { class: 'btn-send clear', onClick: this.clear }, '清除'),
-        ]),
+        h('h5', { class: 'title' }, this.title),
         h('p', { class: 'path' }, [
           TagBlue(this.method.toUpperCase()),
-          h('span', this.path),
+          h('span', { class: 'path-name' }, this.path),
+          ...buttons,
         ]),
         headerTable,
-        h('pre', { class: 'description' }, this.description),
         h(this.$slots.default),
         error,
         result,
